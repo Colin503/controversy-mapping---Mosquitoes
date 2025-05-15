@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Clean Blog - Start Bootstrap Theme</title>
+        <title>Les moustiques</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -14,6 +14,99 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            body {
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              margin: 20px;
+              background: #f0f4f8;
+              color: #2c3e50;
+            }
+            h1 {
+              text-align: center;
+              margin-bottom: 40px;
+              color: #1a5276;
+            }
+            .timeline {
+              position: relative;
+              max-width: 900px;
+              margin: 0 auto;
+              padding: 20px 0;
+            }
+            /* Ligne verticale centrale */
+            .timeline::before {
+              content: '';
+              position: absolute;
+              left: 50%;
+              top: 0;
+              bottom: 0;
+              width: 4px;
+              background: #3498db;
+              transform: translateX(-50%);
+            }
+            /* Conteneur des événements */
+            .event {
+              padding: 20px 30px;
+              position: relative;
+              width: 45%;
+              box-sizing: border-box;
+              background: white;
+              border-radius: 8px;
+              box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+              margin-bottom: 40px;
+            }
+            /* Flèches sur la timeline */
+            .event::after {
+              content: "";
+              position: absolute;
+              top: 20px;
+              width: 0; 
+              height: 0; 
+              border-style: solid;
+            }
+            /* Position gauche */
+            .left {
+              left: 0;
+            }
+            .left::after {
+              right: -15px;
+              border-width: 10px 0 10px 15px;
+              border-color: transparent transparent transparent white;
+            }
+            /* Position droite */
+            .right {
+              left: 55%;
+            }
+            .right::after {
+              left: -15px;
+              border-width: 10px 15px 10px 0;
+              border-color: transparent white transparent transparent;
+            }
+            /* Date */
+            .date {
+              font-weight: 700;
+              color: #2980b9;
+              margin-bottom: 8px;
+            }
+            /* Texte */
+            .content {
+              font-size: 0.95rem;
+              line-height: 1.4;
+            }
+          
+            /* Responsive */
+            @media screen and (max-width: 700px) {
+              .event, .left, .right {
+                width: 100%;
+                left: 0 !important;
+              }
+              .event::after {
+                display: none;
+              }
+              .timeline::before {
+                left: 8px;
+              }
+            }
+          </style>
     </head>
     <body>
         <!-- Navigation-->
@@ -35,76 +128,62 @@
             </div>
         </nav>
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/contact-bg.jpg')">
+        <header class="masthead" style="background-image: url('assets/img/frise.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="page-heading">
-                            <h1>Contact Me</h1>
-                            <span class="subheading">Have questions? I have answers.</span>
+                            <h1>Frise chronologique</h1>
+                            <span class="subheading">L'évolution des espèces de moustiques au cours des années.</span>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </header>
         <!-- Main Content-->
         <main class="mb-4">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
-                        <div class="my-5">
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- * * SB Forms Contact Form * *-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- This form is pre-integrated with SB Forms.-->
-                            <!-- To make this form functional, sign up at-->
-                            <!-- https://startbootstrap.com/solution/contact-forms-->
-                            <!-- to get an API token!-->
-                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                <div class="form-floating">
-                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                    <label for="name">Name</label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="email" type="email" placeholder="Enter your email..." data-sb-validations="required,email" />
-                                    <label for="email">Email address</label>
-                                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="phone" type="tel" placeholder="Enter your phone number..." data-sb-validations="required" />
-                                    <label for="phone">Phone Number</label>
-                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <textarea class="form-control" id="message" placeholder="Enter your message here..." style="height: 12rem" data-sb-validations="required"></textarea>
-                                    <label for="message">Message</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                                </div>
-                                <br />
-                                <!-- Submit success message-->
-                                <!---->
-                                <!-- This is what your users will see when the form-->
-                                <!-- has successfully submitted-->
-                                <div class="d-none" id="submitSuccessMessage">
-                                    <div class="text-center mb-3">
-                                        <div class="fw-bolder">Form submission successful!</div>
-                                        To activate this form, sign up at
-                                        <br />
-                                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                    </div>
-                                </div>
-                                <!-- Submit error message-->
-                                <!---->
-                                <!-- This is what your users will see when there is-->
-                                <!-- an error submitting the form-->
-                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                                <!-- Submit Button-->
-                                <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Send</button>
-                            </form>
-                        </div>
+                        <div class="timeline">
+                            <div class="event left">
+                              <div class="date">Depuis la Seconde Guerre mondiale</div>
+                              <div class="content">
+                                Début des recherches intensives sur les moustiques et leurs maladies vectrices en France.
+                              </div>
+                            </div>
+                            <div class="event right">
+                              <div class="date">1970-2017</div>
+                              <div class="content">
+                                Les invasions biologiques, incluant les moustiques, ont un coût estimé à 1 300 milliards d’euros.
+                              </div>
+                            </div>
+                            <div class="event left">
+                              <div class="date">Années 2000-2010</div>
+                              <div class="content">
+                                Apparition et progression des moustiques tigres (<em>Aedes albopictus</em>) dans plusieurs régions françaises.
+                              </div>
+                            </div>
+                            <div class="event right">
+                              <div class="date">2010-2020</div>
+                              <div class="content">
+                                Multiplication des cas de maladies transmises par les moustiques en France métropolitaine (dengue, chikungunya).
+                              </div>
+                            </div>
+                            <div class="event left">
+                              <div class="date">2020-2025</div>
+                              <div class="content">
+                                Renforcement des moyens de lutte : gestion environnementale, contrôle biologique et innovations comme la Technique de l’Insecte Stérile.
+                              </div>
+                            </div>
+                            <div class="event right">
+                              <div class="date">Aujourd’hui</div>
+                              <div class="content">
+                                Surveillance accrue et utilisation d’outils d’intelligence artificielle pour identifier les moustiques vecteurs et anticiper les épidémies.
+                              </div>
+                            </div>
+                          </div>
                     </div>
                 </div>
             </div>
